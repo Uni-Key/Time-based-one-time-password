@@ -1,0 +1,167 @@
+Delivered-To: bnt989@gmail.com
+Received: by 2002:a05:6a10:eb29:b0:419:20e7:ab0c with SMTP id hx41csp201875pxb;
+        Thu, 2 Mar 2023 13:06:51 -0800 (PST)
+X-Google-Smtp-Source: AK7set9VdncaGaYPIpsTn4UKSgoArMX3vmK0HnInertu1D0s9l4ZFDFDkNy3RHNuEcuRgrkPjoNT
+X-Received: by 2002:a05:622a:2cc:b0:3bf:c3e8:c19b with SMTP id a12-20020a05622a02cc00b003bfc3e8c19bmr18671438qtx.22.1677791211418;
+        Thu, 02 Mar 2023 13:06:51 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1677791211; cv=none;
+        d=google.com; s=arc-20160816;
+        b=J9ZaiFhKLQjtx98lzRwT702hBiEiX/iK8mLS6zSAMMc3/NjXd9aTAns7iYHz921yYc
+         blKsR2gVnH9wD4V/tEjm9Ctywogw6pkG486HkGxsADRk6bSR5ccLMND2capbVmjs9BuT
+         OIn3cegelKG9cIHbc3et2n8mQ6LQlXAHmelhsvpd5aOM852xS8VOVkBvnt+0FcHKHF7i
+         LBilojrUspW9Ns/8n5G6w0nRZF9jopaZ/LCyI1V5a7LiJ4nCzi8g22JNuEPpAEIdEeuB
+         7F8nTta1pidWlA9oKizhWjgPCsFnBiba3agOz+g7YwYxCheFwwhugBKhUrDwN7M6a/q8
+         BZOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=l2xPmT2iBm1VzO74GqpLJPBImrTmHGSs1jFlML1pwJQ=;
+        b=le2cmiqfmjy+NnDma4M/D3EywRlPw9tjJs22RmN6Psyx7RqJgi2dFg5tI0Mcxm7Jkp
+         1TAlDrCFmRv182CbfhNwfPWdIsMPti76j27JjepUPQ1o0o/cS7BJE6TLVGEVaX9eW+Tg
+         94pky0WOKs0gpmKnxDSEtsho3Qjf39VCQ0lR5CfAtxi/m7uZER8fNnE9VplUf1cvEleR
+         rDBsqGEhhsCAGUqx3mkYYvjgnwgjxYNVuX2i8snA+nocS9dEKmubcSK8fjgzosYHqn37
+         6qhsRVT+WKBCKTboK2DexJbZZGecYSrFnQUtYwK/jNi1N3h25c3dIcGTnxY7y2Rhyp/M
+         cjRw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2014 header.b=KIm2LEnv;
+       spf=pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <noreply@github.com>
+Received: from out-17.smtp.github.com (out-17.smtp.github.com. [192.30.252.200])
+        by mx.google.com with ESMTPS id e24-20020ac84158000000b003b84c99e0a6si356568qtm.565.2023.03.02.13.06.50
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Thu, 02 Mar 2023 13:06:51 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) client-ip=192.30.252.200;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2014 header.b=KIm2LEnv;
+       spf=pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Received: from github.com (hubbernetes-node-b31d91e.va3-iad.github.net [10.48.13.22])
+	by smtp.github.com (Postfix) with ESMTPA id C48615C05FE;
+	Thu,  2 Mar 2023 13:06:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1677791210;
+	bh=l2xPmT2iBm1VzO74GqpLJPBImrTmHGSs1jFlML1pwJQ=;
+	h=Date:From:To:Subject:From;
+	b=KIm2LEnvlozFXNxyOUxP5ZKawhS1WWiwbHqUcO1ECHA8ZdeTJSVJS58cN8xRQWkEc
+	 SexRl0jxXWbNPZS0DlR06DCcnX+5/UZxBOSxmZEaU41licfgxkDIcLldUuirmYdGqo
+	 U8kUlBdjC5uuRJX4tFFLAYquux1/Dj9vUbHjVsrg=
+Date: Thu, 02 Mar 2023 13:06:50 -0800
+From: GitHub <noreply@github.com>
+To: TwinFlames <mail4bentownsend@gmail.com>
+Message-ID: <64010feac06e5_64fc904253f1@lowworker-765d4bf454-9rj4r.mail>
+Subject: Changes to the 2FA settings on your GitHub account
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Auto-Response-Suppress: All
+
+<p>=0D
+  Hey TwinFlames,=0D
+</p>=0D
+=0D
+<p>=0D
+  We're reaching out to let you know that we have made some changes to ho=
+w 2FA with SMS is configured on GitHub.com.=0D
+  As part of the two-factor authentication initiative (2FA) that <a href=3D=
+"https://github.blog/2022-05-04-software-security-starts-with-the-develop=
+er-securing-developer-accounts-with-2fa/">we announced last year</a> we'v=
+e added the ability to have both SMS and an authenticator app (TOTP) 2FA =
+methods registered at the same time. =0D
+  While you are already enrolled in 2FA, we have made some changes that u=
+pdate your use of the fallback SMS number. =0D
+</p>=0D
+=0D
+<p>=0D
+  <b>No action is required on your part</b>, but please see below for mor=
+e information about this change. =0D
+  You can also read about this change in <a href=3D"https://github.blog/c=
+hangelog/2023-03-02-sms-and-totp-can-now-both-be-registered-2fa-methods/"=
+>today&#39;s blog post</a>.=0D
+</p>=0D
+=0D
+<p>=0D
+  Making the software supply chain more secure is a team effort, and we c=
+an't do it without you.=0D
+  Your enrollment in 2FA is an impactful step in keeping the world's soft=
+ware secure.=0D
+</p>=0D
+=0D
+<h3>Changes to SMS two-factor authentication (2FA)</h3>=0D
+=0D
+<p>=0D
+  We now support both SMS and TOTP 2FA methods at the same time instead o=
+f supporting only a "fallback" SMS feature, which allows you to receive a=
+ text message to recover your account. =0D
+  For most accounts, we have migrated their fallback SMS number to a stan=
+dard SMS registration, alongside their TOTP method.=0D
+  However, your account is part of a small set that has both a primary SM=
+S and fallback SMS registered.=0D
+</p>=0D
+=0D
+<p>=0D
+  As a result, no change has been made to your account. You still have ac=
+cess to this fallback SMS registration. You can use it during account rec=
+overy, and update it at <a href=3D"https://github.com/settings/security">=
+https://github.com/settings/security</a> if you wish.=0D
+  However, if you remove it from your account, you will not be able to ad=
+d it back.=0D
+  You can learn more about 2FA configuration at <a href=3D"https://docs.g=
+ithub.com/authentication/securing-your-account-with-two-factor-authentica=
+tion-2fa/configuring-two-factor-authentication">https://docs.github.com/a=
+uthentication/securing-your-account-with-two-factor-authentication-2fa/co=
+nfiguring-two-factor-authentication</a>.=0D
+</p>=0D
+=0D
+<h4>Is any action required for my SMS registrations?</h4>=0D
+=0D
+<p>=0D
+  No. Your primary SMS number is still registered, and can be used for 2F=
+A during sign in.=0D
+  Your fallback SMS number is still valid as well, for account recovery p=
+urposes. However,=0D
+  if you choose to delete the fallback SMS number, you will lose the abil=
+ity to add it back in.=0D
+</p>=0D
+=0D
+<p>=0D
+  Please review your SMS numbers at <a href=3D"https://github.com/setting=
+s/security">https://github.com/settings/security</a> to ensure that both =
+of them are still valid=0D
+  contact methods for you =E2=80=93 out-of-date SMS numbers are a securit=
+y risk for your account if someone else now uses that number.=0D
+</p>=0D
+=0D
+<p>=0D
+  In addition, we recommend that you add additional authentication method=
+s to your account beyond SMS, for security and reliability.=0D
+  Most phones and computers support security keys, which you can quickly =
+register by going to <a href=3D"https://github.com/settings/security">htt=
+ps://github.com/settings/security</a>.=0D
+</p>=0D
+=0D
+<p>=0D
+  To understand more about 2FA configuration, visit <a href=3D"https://do=
+cs.github.com/authentication/securing-your-account-with-two-factor-authen=
+tication-2fa/configuring-two-factor-authentication">https://docs.github.c=
+om/authentication/securing-your-account-with-two-factor-authentication-2f=
+a/configuring-two-factor-authentication</a>.=0D
+</p>=0D
+=0D
+<h4>What forms of 2FA can I use?</h4>=0D
+=0D
+<p>GitHub.com lets you select one or more of the following options:</p>=0D=
+
+=0D
+<ul>=0D
+<li>Security key</li>=0D
+<li>GitHub Mobile</li>=0D
+<li>Authenticator application</li>=0D
+<li>Text messages or SMS</li>=0D
+</ul>=0D
+=0D
+<p>=0D
+  Thank you,<br>=0D
+  The GitHub Team=0D
+</p>=0D
